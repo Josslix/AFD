@@ -52,7 +52,7 @@ package reduccion;
 		
 	for(int i=0; i<transicion.length;i++) {
 		
-		c0+=transicion[i]+',';
+		
 		if(i==transicion.length-1) {
 			c0+=transicion[i];
 		}
@@ -60,8 +60,21 @@ package reduccion;
 			c0+=transicion[i]+',';
 		}
 		
+	}
+	
+for(int i=0; i<eAceptacion.length;i++) {
+
+	
+		if(i==eAceptacion.length-1) {
+			c2+=eAceptacion[i];
+		}
+		else {
+			c2+=eAceptacion[i]+',';
+		}
+		
 		
 	}
+		
 		
 		if(noAcepta>0) {
 			c1=String.valueOf(noAcepta);
