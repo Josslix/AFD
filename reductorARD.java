@@ -123,6 +123,10 @@ for(int i=0; i<eAceptacion.length;i++) {
 	    				perron2 += matriz2[x][k];
 	    		if(perron1 == perron2)
     			{
+	    			(var item : reducto)
+	    			{
+	    				
+	    			}
 	    			reducto.add(perron1);
     			}
 	    	}
