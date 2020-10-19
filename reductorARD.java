@@ -1,16 +1,22 @@
 package reduccion;
 
- public class reductorARD {
+import java.util.ArrayList;
+import java.util.List;
+
+public class reductorARD {
 
 	public int[][] ReductorAFD(int [][] quintupla, int eAceptacion[], int estados){
 	String c0 = "";
 	String c1="";
 	String c2="";
+	String perron1 = "";
+	String perron2 = "";
 		boolean estatus = true;
 		String [][] matriz2;
 		int aceptacion [][];
 		int transicion[];
 		int noAcepta = 0;
+		ArrayList<String> reducto = new ArrayList<String>();
 		for( int i=0; i< quintupla.length; i++)
 		{
 		    estatus = true;
@@ -99,12 +105,37 @@ for(int i=0; i<eAceptacion.length;i++) {
 		    	}
 		}
 
+		for(int i=0; i<matriz2.length; i++)
+		{
+			perron1 = "";
+	    	for(int j=0; j<matriz2[0].length; j++)
+	    		if (j == matriz2[0].length -1)
+	    			perron1 += matriz2[i][j] + ",";
+	    		else
+	    			perron1 += matriz2[i][j];
+	    	for(int x=i+1; x<matriz2.length; i++) {
+	    		perron2 ="";
+	    		for(int k=0; k<matriz2[0].length; k++)    
+	    			if (k == matriz2[0].length -1)
+	    				perron2 += matriz2[x][k] + ",";
+	    			else
+	    				perron2 += matriz2[x][k];
+	    		if(perron1 == perron2)
+    			{
+	    			reducto.add(perron1);
+    			}
+	    	}
+		}
 		
-		
-		
-	
-		
-		
+	/*
+	q1 =	c0 c1   {q1}
+	q2 =	c1 c2	{q2,q7}
+	q3 =	c0 c0	{q3}
+	q4 =	c1 c1	{q4,q6}
+	q5 =	c2 c1	{q5}
+	q6 =	c1 c1
+	q7 =	c1 c2
+	*/
 	return quintupla;	
 	}
 }
