@@ -114,6 +114,7 @@ for(int i=0; i<eAceptacion.length;i++) {
 	    		else
 	    			perron1 += matriz2[i][j];
 	    	for(int x=i+1; x<matriz2.length; i++) {
+	    		boolean isPerron = false;
 	    		perron2 ="";
 	    		for(int k=0; k<matriz2[0].length; k++)    
 	    			if (k == matriz2[0].length -1)
