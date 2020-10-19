@@ -51,8 +51,6 @@ package reduccion;
 		}
 		
 	for(int i=0; i<transicion.length;i++) {
-		
-		
 		if(i==transicion.length-1) {
 			c0+=transicion[i];
 		}
@@ -61,6 +59,8 @@ package reduccion;
 		}
 		
 	}
+	
+	
 	
 for(int i=0; i<eAceptacion.length;i++) {
 
@@ -71,11 +71,11 @@ for(int i=0; i<eAceptacion.length;i++) {
 		else {
 			c2+=eAceptacion[i]+',';
 		}
-		
-		
 	}
 		
 		
+
+
 		if(noAcepta>0) {
 			c1=String.valueOf(noAcepta);
 		}
@@ -85,10 +85,18 @@ for(int i=0; i<eAceptacion.length;i++) {
 		{
 		    for(int j=0; j<quintupla[0].length; j++)
 		    	for(int k=0; k<transicion.length; k++)
+		    	{		    		
 		    		if(quintupla[i][j] == transicion[k])
 		    			matriz2[i][j] = c0;
-		    		else
+		    		else if(quintupla[i][j] == noAcepta)
 		    			matriz2[i][j] = c1;
+		    		else
+		    		{		    			
+		    		for(int x=0; x<eAceptacion.length; x++)
+		    			if(quintupla[i][j] == eAceptacion[x])
+		    				matriz2[i][j] = c2;
+		    		}
+		    	}
 		}
 
 		
